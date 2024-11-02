@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon ./server.js",
-    "dataCities": "node ./Models/data/cities.js"
+    "dataCities": "node ./Models/data/cities.js",
+    "dataItineraries": "node ./Models/data/itineraries.js"
   },
   "keywords": [],
   "author": "",
