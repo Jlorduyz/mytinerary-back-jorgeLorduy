@@ -13,4 +13,20 @@ let update = async (req, res, next) => {
   }
 };
 
-export { update };
+let updateMany = async (req, res, next) => {
+  try {
+    await Itinerary.updateMany({
+      likes : req.body.likes
+    },{img: req.body.img})
+    return res.status(200).json({
+      success : true,
+      response : 'update all'
+    })
+  }catch (e) {
+    next(e)
+  }
+}
+
+
+
+export { update ,updateMany};

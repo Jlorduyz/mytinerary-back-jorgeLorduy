@@ -8,6 +8,7 @@ let schema = Schema(
       name: { type: String, required: true },
       photo: { type: String, required: true },
     },
+      img: { type: String, required: true },
     price: { type: Number, required: true },
     duration: { type: String, required: true },
     likes: { type: Number, required: true },
