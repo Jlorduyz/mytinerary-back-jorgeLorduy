@@ -2,7 +2,7 @@ import {Router} from 'express';
 import {AllUsers, UserEmail, UserName, UserID} from "../Controllers/users/read.js";
 import UserRegister from "../Controllers/users/register.js";
 import DeleteUser from "../Controllers/users/delete.js";
-import {UpdateUserParam, UpdateUserID, UpdateBody} from "../Controllers/Users/update.js";
+import {UpdateUserParam, UpdateUserID, UpdateBody} from "../Controllers/users/update.js";
 import Validator from "../Middlewares/Validator.js";
 import SchemaRegister from '../Schemas/users/register.js'
 import SchemaDelete from '../Schemas/users/delete.js'
