@@ -10,6 +10,8 @@ import SchemaUpdate from '../Schemas/users/updates.js'
 import Password_Hash from "../Middlewares/Password_Hash.js";
 import AccountExist from "../Middlewares/AccountExist.js";
 import passport from "../Middlewares/Passport.js";
+import GenerateToken from "../Middlewares/GenerateToken.js";
+import signIn from "../Controllers/Auth/signIn.js";
 
 
 const router = Router();
@@ -18,7 +20,7 @@ router.get('/all',passport.authenticate('jwt', {session:false}), AllUsers);
 router.get('/email/:x',passport.authenticate('jwt', {session:false}), UserEmail);
 router.get('/user/:x',passport.authenticate('jwt', {session:false}),UserName);
 router.get('/id/:x',passport.authenticate('jwt', {session:false}), UserID);
-router.post('/register',Validator(SchemaRegister),AccountExist, Password_Hash, UserRegister);
+router.post('/register',Validator(SchemaRegister),AccountExist, Password_Hash, UserRegister,GenerateToken, signIn);
 router.delete('/remove',Validator(SchemaDelete),passport.authenticate('jwt', {session:false}), DeleteUser);
 router.put('/updateByEmail/:x',Validator(SchemaUpdate),passport.authenticate('jwt', {session:false}), UpdateUserParam);
 router.put('/updateByID/:x',Validator(SchemaUpdate),passport.authenticate('jwt', {session:false}), UpdateUserID);
